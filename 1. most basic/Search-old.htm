@@ -1,0 +1,169 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+	<!--
+Developed by Abhinav Kumar :)
+2014
+-->
+	<title>The Invincible Searcher</title>
+	<style type="text/css">a:link { color: #FF0000;	text-decoration: none; }
+a:visited { color: #FF0000; text-decoration: underline; }
+a:hover { color: #0000FF; text-decoration: none; }
+a:active { color: #FF0000;}
+
+#pointermaker { cursor:pointer; }
+
+#inputbox {
+font-family: "Times New Roman";
+font-size: 120%;
+text-align: center;
+border: 2px solid blue;
+border-radius: 2px;
+border-style: dotted;
+}
+
+#inputbox:focus {
+  outline: none;
+}
+	</style>
+	<script src="jquery-2.1.0.min.js"></script><!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--><script>
+function notEmpty(elem, helperMsg){
+	if(elem.value.length == 0)
+	{
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+	else
+	{
+	openup();
+	return true;
+	}
+}
+
+function openup()
+{
+var engine;
+engine=document.myform.engine.value;
+var search;
+search=document.myform.query.value;
+if(engine=="google")
+open("http://www.google.com/search?q="+search+"" );
+if(engine=="googleimg")
+open("http://www.images.google.com/images?ie=utf-8&oe=utf-8&aq=t&q="+search+"" );
+if(engine=="bing")
+open("http://www.bing.com/search?q="+search+"" );
+if(engine=="wikipedia")
+open("http://en.wikipedia.org/wiki/Special:Search?search="+search+"");
+if(engine=="archive.is")
+window.open("https://archive.today/?run=1&url="+search+"" );
+if(engine=="mp3skullGoogle")
+open("http://www.google.com/search?q="+search+" mp3skull" );
+if(engine=="piratebay")
+open("http://thepiratebay.org/search/"+search+"/0/99/0");
+if(engine=="youtube")
+open("http://www.youtube.com/results?search_query="+search+"" );
+if(engine=="webarchivesave")
+open("http://web.archive.org/save/"+search+"" );
+if(engine=="webarchiveview")
+open("http://web.archive.org/web/*/"+search+"" );
+if(engine=="gfycat")
+open("http://www.gfycat.com/fetch/"+search+"" );
+if(engine=="keepvid")
+open("http://www.keepvid.com/?url="+search+"" );
+if(engine=="imagefap")
+//window.open("http://www.imagefap.com/gallery.php", "myWindow", "status = 1, height = 400, width = 400, resizable = 0" );
+window.open("http://www.imagefap.com/gallery.php?search="+search+"&submit=Search%21" );
+if(engine=="imagefapGoogle")
+window.open("http://www.google.com/search?q="+search+" imagefap" );
+if(engine=="hotpz")
+window.open("http://hotpz.com/?s="+search+"&x=0&y=0");
+if(engine=="boysfood")
+open("http://www.boysfood.com/cgi-bin/bfn.cgi?search="+search+"" );
+if(engine=="xvideos")
+open("http://www.xvideos.com/?k="+search+"" );
+}
+
+var foo = true;
+$(document).ready(function(){
+  $(".showHide").click(function(){
+    $(".censored").toggle();
+      if (foo){
+        $(".showHide").text("Hide Censored Stuff?");
+        foo= false;
+      }
+      else{
+        $(".showHide").text("Show Stuff!");
+        foo= true;
+      }
+  });
+});
+
+function highlight(){
+    $("#inputBox").focus();
+}
+
+function hideCensoredStuffByDefault(){
+    $(".censored").hide();
+}
+</script>
+</head>
+<body onclick="highlight()" onload="hideCensoredStuffByDefault()">
+<center>
+<h2><span style="background-color: #FFFF9B; color: #FF0000;"><a href="Search-old.htm" title="Reload">Multiple Search for you:</a></span></h2>
+
+<form action="#" id="myform" name="myform"><b>Search Engine:</b>
+
+<table border="0" bordercolor="#111111" cellpadding="3" cellspacing="2" height="92" style="border-collapse: collapse" width="31%">
+	<tbody>
+		<tr>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="google" />Google</label></td>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="googleimg" />Google Images</label></td>
+		</tr>
+		<tr>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="bing" />Bing</label></td>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="wikipedia" />Wikipedia</label></td>
+		</tr>
+		<tr>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="archive.is" />Archive.is</label></td>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="mp3skullGoogle" />MP3Skull Google</label></td>
+		</tr>
+		<tr>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="piratebay" />Piratebay</label></td>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="youtube" />YouTube</label></td>
+		</tr>
+		<tr>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="webarchivesave" />Save to Web Archive</label></td>
+			<td height="22" width="50%"><label id="pointermaker"><input checked="checked" name="engine" onchange="highlight()" type="radio" value="webarchiveview" />View in Web Archive</label></td>
+		</tr>
+		<tr>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="keepvid" />Download Video</label></td>  
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="gfycat" />GFYcat</label></td>
+		</tr>
+		<tr>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="" />---</label></td>
+			<td height="22" width="50%"><a class="showHide" id="pointermaker" title="Click me to hide websites with crazy content">Show stuff!</a></td>
+		</tr>
+		<tr class="censored">
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="imagefap" />Imagefap</label></td>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="imagefapGoogle" />Imagefap Google</label></td>
+		</tr>
+		<tr class="censored">
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="boysfood" />Boys Food</label></td>
+			<td height="22" width="50%"><label id="pointermaker"><input name="engine" onchange="highlight()" type="radio" value="xvideos" />X-Videos</label></td>
+		</tr>
+	</tbody>
+</table>
+
+<p></p>
+
+<p><input autofocus="" id="inputBox" name="query" placeholder="Search Term" size="60" tabindex="2" title="Search" type="text" /></p>
+
+<p><input accesskey="a" onclick="notEmpty(document.getElementById('inputBox'), 'Please Enter a Value')" tabindex="2" type="submit" value="Find" /> <input accesskey="b" tabindex="3" title="Refresh.(alt+b)" type="reset" value="Reset" /></p>
+</form>
+
+<hr width="30%" />
+<h5>Copyleft 2014.<br />
+Cogia<sup><small>TM</small></sup></h5>
+</center>
+</body>
+</html>
