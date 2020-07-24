@@ -39,7 +39,7 @@ Click on an engine button to add it to your new installation
             while ($row = mysqli_fetch_array($result)) {
                 if ($row ['hidden'] == 1) {
                     // if hidden, use the old identifier value and notify that it was hidden
-                    echo '<button class="btn btn-warning my-1 newEngineMake" data-sitename="'.$row['site name'].'" data-identifier="'.$row['old-identifier'].'" data-urlprefix="'.$row['url-prefix'].'" data-urlsuffix="'.$row['url-suffix'].'"                 data-baseurl="'.$row['baseurl'].'" data-nsfw="'.$row['nsfw'].'">'.$row['site name'].' (Hidden)</button>';
+                    echo '<button class="btn btn-warning my-1 newEngineMake" data-sitename="'.$row['site name'].'" data-identifier="'.$row['old-identifier'].'" data-urlprefix="'.$row['url-prefix'].'" data-urlsuffix="'.$row['url-suffix'].'" data-baseurl="'.$row['baseurl'].'" data-nsfw="'.$row['nsfw'].'">'.$row['site name'].' (Hidden)</button>';
                 } else {
                     echo '<button class="btn btn-primary my-1 newEngineMake" data-sitename="'.$row['site name'].'" data-identifier="'.$row['identifier'].'" data-urlprefix="'.$row['url-prefix'].'" data-urlsuffix="'.$row['url-suffix'].'" data-baseurl="'.$row['baseurl'].'" data-nsfw="'.$row['nsfw'].'">'.$row['site name'].'</button>';
                 }
